@@ -1,0 +1,74 @@
+Script started on Sat 17 Jan 2015 06:38:44 PM EST
+bkarnes@TheDude: ~/Projects/PND-Research/Vagrant/UbuntuBoxbkarnes@TheDude:~/Projects/PND-Research/Vagrant/UbuntuBox$ vagrant up
+Bringing machine 'default' up with 'virtualbox' provider...
+==> default: Checking if box 'ubuntu/trusty64' is up to date...
+==> default: Clearing any previously set forwarded ports...
+==> default: Clearing any previously set network interfaces...
+==> default: Preparing network interfaces based on configuration...
+    default: Adapter 1: nat
+    default: Adapter 2: hostonly
+==> default: Forwarding ports...
+    default: 22 => 2222 (adapter 1)
+==> default: Running 'pre-boot' VM customizations...
+==> default: Booting VM...
+==> default: Waiting for machine to boot. This may take a few minutes...
+    default: SSH address: 127.0.0.1:2222
+    default: SSH username: vagrant
+    default: SSH auth method: private key
+    default: Warning: Connection timeout. Retrying...
+==> default: Machine booted and ready!
+==> default: Checking for guest additions in VM...
+==> default: Configuring and enabling network interfaces...
+==> default: Mounting shared folders...
+    default: /vagrant => /home/bkarnes/Projects/PND-Research/Vagrant/UbuntuBox
+==> default: Machine already provisioned. Run `vagrant provision` or use the `--provision`
+==> default: to force provisioning. Provisioners marked to run always will still run.
+bkarnes@TheDude: ~/Projects/PND-Research/Vagrant/UbuntuBoxbkarnes@TheDude:~/Projects/PND-Research/Vagrant/UbuntuBox$ vagrant ssh
+Welcome to Ubuntu 14.04.1 LTS (GNU/Linux 3.13.0-44-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Sat Jan 17 23:39:20 UTC 2015
+
+  System load:  0.9               Users logged in:        0
+  Usage of /:   7.1% of 39.34GB   IP address for eth0:    10.0.2.15
+  Memory usage: 14%               IP address for eth1:    192.168.57.20
+  Swap usage:   0%                IP address for docker0: 172.17.42.1
+  Processes:    93
+
+  Graph this data and manage this system at:
+    https://landscape.canonical.com/
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+
+Last login: Sat Jan 17 23:29:41 2015 from 10.0.2.2
+
+vagrant@vagrant-ubuntu-trusty-64: ~vagrant@vagrant-ubuntu-trusty-64:~$ ls -l
+total 4
+drwxrwxr-x 3 vagrant vagrant 4096 Jan 17 02:59 [01;34mProjects
+vagrant@vagrant-ubuntu-trusty-64: ~vagrant@vagrant-ubuntu-trusty-64:~$ cd Projects/Docker/Wordpress/
+vagrant@vagrant-ubuntu-trusty-64: ~/Projects/Docker/Wordpressvagrant@vagrant-ubuntu-trusty-64:~/Projects/Docker/Wordpress$ ls -l
+total 0
+vagrant@vagrant-ubuntu-trusty-64: ~/Projects/Docker/Wordpressvagrant@vagrant-ubuntu-trusty-64:~/Projects/Docker/Wordpress$ sudo docker images
+REPOSITORY          TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
+wordpress           latest              dd95974be471        8 days ago          461.2 MB
+mysql               latest              310c359af360        8 days ago          282.9 MB
+
+vagrant@vagrant-ubuntu-trusty-64:~$ cd /vagrant
+vagrant@vagrant-ubuntu-trusty-64:/vagrant$ ls -l
+total 965496
+-rw-rw-r-- 1 vagrant vagrant       232 Jan 17 23:42 exit
+-rw-rw-r-- 1 vagrant vagrant 988638410 Jan 17 05:50 UbuntuServer14.04-Docker.box
+-rw-rw-r-- 1 vagrant vagrant      4179 Jan 17 05:24 Vagrant-Docker-WordpressNotes.txt
+-rw-rw-r-- 1 vagrant vagrant      3089 Jan 17 05:26 Vagrantfile
+-rw-rw-r-- 1 vagrant vagrant      3016 Jan 16 23:23 Vagrantfile.dist
+-rw-rw-r-- 1 vagrant vagrant      4003 Jan 17 23:42 vagrantscript.txt
+vagrant@vagrant-ubuntu-trusty-64:/vagrant$ exit
+logout
+Connection to 127.0.0.1 closed.
+bkarnes@TheDude: ~/Projects/PND-Research/Vagrant/UbuntuBoxbkarnes@TheDude:~/Projects/PND-Research/Vagrant/UbuntuBox$ exit
+exit
+
+Script done on Sat 17 Jan 2015 06:42:07 PM EST
